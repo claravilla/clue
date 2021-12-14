@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue</title>
+    <link rel="stylesheet" src="/style.css">
+</head>
+<body>
+    <img src="images/Clue-Logo.jpg" alt="clue logo">
+    <header>
+        <h1>Can you guess who did it?</h1>
+        <h2>Unleash your inner detective and Play online Clue</h2>
+        <p>No real investigating skills required really, just sheer luck ☘️</p>
+    </header>
+    <button type="button">Start game</button>
+
+    <section id="guess-form">
+    <form action="" method="post">
+      <h1>Who killed Dr. Black?</h1>
+      <p>It was 
+      <select id="person" name="person">
+          <option value="scarlett">Miss Scarlett</option>
+          <option value="green">Rev Green</option>
+          <option value="mustard">Colonel Mustard</option>
+          <option value="plum">Professor Plum</option>
+          <option value="peacock">Mrs Peacock</option>
+          <option value="white">Mrs White</option>
+      </select>
+      in the 
+      <select id="room" name="room">
+        <option value="kitchen">Kitchen</option>
+        <option value="ballroom">Ballroom</option>
+        <option value="conservatory">Conservatory</option>
+        <option value="dining">Dining Room</option>
+        <option value="billard">Billard Room</option>
+        <option value="library">Library</option>
+        <option value="study">Study</option>
+        <option value="hall">Hall</option>
+        <option value="lounge">Lounge</option>
+    </select>
+    with 
+    <select id="weapon" name="weapon">
+        <option value="candlestick">Candlestick</option>
+        <option value="dagger">Dagger</option>
+        <option value="pipe">Lead Pipe</option>
+        <option value="revolver">Revolver</option>
+        <option value="rope">Rope</option>
+        <option value="wrench">Wrench</option>
+    </select>
+
+    </p>
+    </form>
+ </section>
+
+ <section id="wrong-answer">
+     <p>You haven't solved the murder!</p>
+     <button type="button">Try again</button>
+ </section>
+
+ <section id="right-answer">
+    <p>Well done Detective, you solved thee murder!</p>
+    <button type="button">Play again</button>
+ </section>
+
+
+</body>
+</html>
