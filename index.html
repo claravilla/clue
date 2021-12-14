@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clue</title>
-    <link rel="stylesheet" src="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="images/Clue-Logo.jpg" alt="clue logo">
     <header>
+        <img class="header-img" src="images/Clue-Logo.jpg" alt="clue logo">
         <h1>Can you guess who did it?</h1>
         <h2>Unleash your inner detective and Play online Clue</h2>
-        <p>No real investigating skills required really, just sheer luck ☘️</p>
+        <p>No real investigating skills required - just sheer luck ☘️</p>
     </header>
-    <button type="button">Start game</button>
+    <section id="start">
+    <button type="button" class="btn start-btn">Start game</button>
+</section>
 
     <section id="guess-form">
     <form action="" method="post">
       <h1>Who killed Dr. Black?</h1>
-      <p>It was 
+      <p class="text">It was 
       <select id="person" name="person">
           <option value="scarlett">Miss Scarlett</option>
           <option value="green">Rev Green</option>
@@ -55,13 +60,13 @@
  </section>
 
  <section id="wrong-answer">
-     <p>You haven't solved the murder!</p>
-     <button type="button">Try again</button>
+     <p class="text">You haven't solved the murder!</p>
+     <button type="button" class="btn try-btn">Try again</button>
  </section>
 
  <section id="right-answer">
-    <p>Well done Detective, you solved thee murder!</p>
-    <button type="button">Play again</button>
+    <p class="text">Well done Detective, you solved the murder!</p>
+    <button type="button" class="btn play-btn">Play again</button>
  </section>
 
 

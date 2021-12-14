@@ -1,0 +1,92 @@
+body {
+  margin: 20px;
+  font-family: "Didact Gothic", sans-serif;
+  background-color: rgb(255, 255, 131);
+}
+
+.header-img {
+  width: 30%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+    color:red;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+#start {
+   display:flex;
+   justify-content: center;
+}
+
+.btn {
+    font-family: "Didact Gothic", sans-serif;
+    font-size:1rem;
+    padding: 10px;
+    border-radius: 10px;
+    width: 15%;
+}  
+
+.start-btn {
+    background-color: rgb(56, 146, 71);
+    margin-top: 50px;
+}
+
+.try-btn {
+   background-color: rgb(238, 34, 8);
+   margin-top: 10px;
+}
+
+.play-btn {
+    background-color: rgb(50, 111, 241);
+    margin-top: 10px;
+ }
+
+ #guess-form {
+     display:flex;
+     justify-content: center;
+ }
+
+option {
+    font-family: "Didact Gothic", sans-serif;
+}
+
+.text {
+    font-size: 1.5rem;;
+}
+
+#wrong-answer {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0 auto;
+    position:relative;
+    top:-150px;
+}
+
+#right-answer {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0 auto;
+    margin:0 auto;
+    position:relative;
+    top:-250px;
+}
