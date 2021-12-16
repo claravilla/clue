@@ -29,9 +29,11 @@ header p {
     font-size: 1rem;
 }
 
-#start {
-   display:flex;
-   justify-content: center;
+
+
+.start-visible {
+    display:flex;
+    justify-content: center;
 }
 
 .btn {
@@ -47,6 +49,11 @@ header p {
     margin-top: 50px;
 }
 
+.form-btn {
+    background-color: rgb(50, 53, 205);
+    margin-top:50px;
+    width:30%;
+}
 .try-btn {
    background-color: rgb(238, 34, 8);
    margin-top: 10px;
@@ -57,10 +64,15 @@ header p {
     margin-top: 10px;
  }
 
- #guess-form {
-     display:flex;
-     justify-content: center;
+
+ .column-display {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
  }
+
+
 
 option {
     font-family: "Didact Gothic", sans-serif;
@@ -70,21 +82,22 @@ option {
     font-size: 1.5rem;;
 }
 
-#wrong-answer {
+.invisible {
+    display:none;
+}
+
+.guess-form-visible {
     display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+}
+
+#wrong-answer {
     margin:0 auto;
     position:relative;
     top:-150px;
 }
 
 #right-answer {
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     margin:0 auto;
     margin:0 auto;
     position:relative;

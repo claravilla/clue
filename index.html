@@ -17,15 +17,16 @@
         <h2>Unleash your inner detective and Play online Clue</h2>
         <p>No real investigating skills required - just sheer luck ☘️</p>
     </header>
-    <section id="start">
-    <button type="button" class="btn start-btn">Start game</button>
+    <section id="start" class="start-visible">
+    <button type="button" id="start-game" class="btn start-btn">Start game</button>
 </section>
 
-    <section id="guess-form">
-    <form action="" method="post">
+    <section id="guess-form" class="invisible">
+    <form action="" method="post" class="column-display">
       <h1>Who killed Dr. Black?</h1>
       <p class="text">It was 
-      <select id="person" name="person">
+      <select id="person" name="person" class="text">
+          <option value="blank"></option>
           <option value="scarlett">Miss Scarlett</option>
           <option value="green">Rev Green</option>
           <option value="mustard">Colonel Mustard</option>
@@ -34,7 +35,8 @@
           <option value="white">Mrs White</option>
       </select>
       in the 
-      <select id="room" name="room">
+      <select id="room" name="room" class="text">
+        <option value="blank"></option>
         <option value="kitchen">Kitchen</option>
         <option value="ballroom">Ballroom</option>
         <option value="conservatory">Conservatory</option>
@@ -46,7 +48,8 @@
         <option value="lounge">Lounge</option>
     </select>
     with 
-    <select id="weapon" name="weapon">
+    <select id="weapon" name="weapon" class="text">
+        <option value="blank"></option>
         <option value="candlestick">Candlestick</option>
         <option value="dagger">Dagger</option>
         <option value="pipe">Lead Pipe</option>
@@ -54,21 +57,22 @@
         <option value="rope">Rope</option>
         <option value="wrench">Wrench</option>
     </select>
-
     </p>
+    <button type="submit" class="btn form-btn" id="submit-guess">I solved the murder</button>
     </form>
  </section>
 
- <section id="wrong-answer">
+ <section id="wrong-answer" class="column-display invisible">
      <p class="text">You haven't solved the murder!</p>
      <button type="button" class="btn try-btn">Try again</button>
  </section>
 
- <section id="right-answer">
+ <section id="right-answer" class="column-display invisible">
     <p class="text">Well done Detective, you solved the murder!</p>
     <button type="button" class="btn play-btn">Play again</button>
  </section>
 
+ <script src="script.js"></script>
 
 </body>
 </html>
