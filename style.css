@@ -93,13 +93,8 @@ option {
 
 #wrong-answer {
     margin:0 auto;
-    position:relative;
-    top:-150px;
 }
 
 #right-answer {
     margin:0 auto;
-    margin:0 auto;
-    position:relative;
-    top:-250px;
 }
