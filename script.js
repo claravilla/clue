@@ -55,20 +55,53 @@ function checkGuess() {
   let guessRoom = document.getElementById("room").value;
   let guessWeapon = document.getElementById("weapon").value;
   console.log(guessPerson, guessRoom, guessWeapon);
+  let rightGuess = 0;
 
-  if (
-    guessPerson === game.person &&
-    guessRoom === game.room &&
-    guessWeapon === game.weapon
-  ) {
-    document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+
+
+  if (guessPerson === game.person) {
+    rightGuess++;
+  };
+
+  if (guessRoom === game.room ){
+    rightGuess++;
+ };
+
+ if (guessWeapon === game.weapon ){
+  rightGuess++;
+};
+
+
+if (rightGuess===3) {
+  document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+  document.getElementById("guess-form").setAttribute("class", "invisible");
+  document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
+
+} else {
+     document.getElementById("guess-form").removeAttribute("class"); // set form to not display
     document.getElementById("guess-form").setAttribute("class", "invisible");
-    document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
-  } else {
-    document.getElementById("guess-form").removeAttribute("class"); // set form to not display
-    document.getElementById("guess-form").setAttribute("class", "invisible");
+    document.getElementById("right-guess").textContent = `Right guesses: ${rightGuess}`;
     document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
-  }
+
+}
+
+
+  // if (
+  //   guessPerson === game.person &&
+  //   guessRoom === game.room &&
+  //   guessWeapon === game.weapon
+  // ) {
+  //   document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+  //   document.getElementById("guess-form").setAttribute("class", "invisible");
+  //   document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
+  // } else {
+  //   document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+  //   document.getElementById("guess-form").setAttribute("class", "invisible");
+  //   document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
+  // }
+
+
+  
 }
 
 //to be called on try again - display the form again
@@ -76,10 +109,14 @@ function tryAgain() {
   // set form to display
  
   document.getElementById("guess-form").classList.remove("invisible");
+  
 
 
   // set wrong answer not to  display
   document.getElementById("wrong-answer").classList.add("invisible");
+
+  //empty the right guess sentence
+  document.getElementById("right-guess").textContent="";
 }
 
 //to be called on play again - remove the right paragraph and re-start the game
