@@ -45,9 +45,7 @@ function startGame() {
 
   document.getElementById("start").setAttribute("class", "invisible");
   document.getElementById("guess-form").removeAttribute("class");
-  document
-    .getElementById("guess-form")
-    .setAttribute("class", "guess-form-visible");
+  document.getElementById("guess-form").setAttribute("class", "guess-form-visible");
 }
 
 //to be called on form submit - check that value submitted matched the game solution and display the right/wrong section
@@ -76,7 +74,9 @@ function checkGuess() {
 //to be called on try again - display the form again
 function tryAgain() {
   // set form to display
+ 
   document.getElementById("guess-form").classList.remove("invisible");
+
 
   // set wrong answer not to  display
   document.getElementById("wrong-answer").classList.add("invisible");
