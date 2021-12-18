@@ -57,6 +57,14 @@ header p {
 .try-btn {
    background-color: rgb(238, 34, 8);
    margin-top: 10px;
+   width: auto;
+}
+
+.result-btn {
+    background-color: rgb(8, 203, 238);
+    margin-top: 10px;
+    margin-left: 20px;
+    width: auto;
 }
 
 .play-btn {
@@ -93,6 +101,11 @@ option {
 
 #wrong-answer {
     margin:0 auto;
+}
+
+.wrong-answer-buttons {
+    display:flex;
+    justify-content: space-evenly;
 }
 
 #right-answer {

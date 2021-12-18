@@ -89,7 +89,7 @@ if (rightGuess===3) {
 
 }
 
-
+//------- to check guess without telling the user how many they got right
   // if (
   //   guessPerson === game.person &&
   //   guessRoom === game.room &&
@@ -103,7 +103,7 @@ if (rightGuess===3) {
   //   document.getElementById("guess-form").setAttribute("class", "invisible");
   //   document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
   // }
-
+//------------------------------------------------------------------------------------------------
 
   
 }
