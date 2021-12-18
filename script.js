@@ -14,7 +14,7 @@ const rooms = [
   "study",
 ];
 
-const weapons = ["candlestick", "dagger", "pipe", "revolver", "rope", "wretch"];
+const weapons = ["candlestick", "dagger", "pipe", "revolver", "rope", "wrench"];
 
 let game = {
   person: "",
@@ -107,6 +107,9 @@ if (rightGuess===3) {
 //to be called on try again - display the form again
 function tryAgain() {
   // set form to display
+  document.getElementById("person").value ="" ;
+  document.getElementById("room").value ="" ;
+  document.getElementById("weapon").value ="" ;
  
   document.getElementById("guess-form").classList.remove("invisible");
   
@@ -122,6 +125,9 @@ function tryAgain() {
 //to be called on play again - remove the right paragraph and re-start the game
 function playAgain() {
   // set right answer not to  display
+  document.getElementById("person").value ="" ;
+  document.getElementById("room").value ="" ;
+  document.getElementById("weapon").value ="" ;
   document.getElementById("right-answer").classList.add("invisible");
 
   startGame();
