@@ -22,6 +22,7 @@ let game = {
   weapon: "",
 };
 
+let rounds = 0;
 //eventListeners
 document.getElementById("start-game").addEventListener("click", startGame);
 document.getElementById("submit-guess").addEventListener("click", checkGuess);
@@ -37,6 +38,7 @@ function randomSelection(arr) {
 
 //assigne value to the game solution and display the guess form
 function startGame() {
+  rounds = 0;
   game.person = people[randomSelection(people)];
   game.room = rooms[randomSelection(rooms)];
   game.weapon = weapons[randomSelection(weapons)];
@@ -51,6 +53,7 @@ function startGame() {
 //to be called on form submit - check that value submitted matched the game solution and display the right/wrong section
 
 function checkGuess() {
+  rounds++;
   let guessPerson = document.getElementById("person").value;
   let guessRoom = document.getElementById("room").value;
   let guessWeapon = document.getElementById("weapon").value;
@@ -80,7 +83,7 @@ if (rightGuess===3) {
 } else {
      document.getElementById("guess-form").removeAttribute("class"); // set form to not display
     document.getElementById("guess-form").setAttribute("class", "invisible");
-    document.getElementById("right-guess").textContent = `Right guesses: ${rightGuess}`;
+    document.getElementById("right-guess").innerHTML = `Accusation #${rounds} <br> Right guesses: ${rightGuess}`;
     document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
 
 }
@@ -119,7 +122,7 @@ function tryAgain() {
   document.getElementById("wrong-answer").classList.add("invisible");
 
   //empty the right guess sentence
-  document.getElementById("right-guess").textContent="";
+  document.getElementById("right-guess").innerHTML="";
 }
 
 //to be called on play again - remove the right paragraph and re-start the game
