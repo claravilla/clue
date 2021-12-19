@@ -162,47 +162,50 @@ function startGame() {
 
 function checkGuess() {
   if (
-    (document.getElementById("person").value === "blank") ||
-    (document.getElementById("room").value === "blank") ||
-    (document.getElementById("weapon").value === "blank")
+    document.getElementById("person").value === "blank" ||
+    document.getElementById("room").value === "blank" ||
+    document.getElementById("weapon").value === "blank"
   ) {
-    alert ("You need to select a suspect, a room and a weapon before submitting your accusation!");
-  }  else  {
-
-  rounds++;
-  let guessPerson = document.getElementById("person").value;
-  let guessRoom = document.getElementById("room").value;
-  let guessWeapon = document.getElementById("weapon").value;
-  console.log(guessPerson, guessRoom, guessWeapon);
-  let rightGuess = 0;
-
-  if (guessPerson === game.person.value) {
-    rightGuess++;
-  }
-
-  if (guessRoom === game.room.value) {
-    rightGuess++;
-  }
-
-  if (guessWeapon === game.weapon.value) {
-    rightGuess++;
-  }
-
-  if (rightGuess === 3) {
-    document.getElementById("guess-form").removeAttribute("class"); // set form to not display
-    document.getElementById("guess-form").setAttribute("class", "invisible");
-    document.getElementById("solution-par").innerHTML = `Well done Detective, you solved the murder at your ${rounds} accusation!<br><br>
-    It was indeed <span class="sol-text">${game.person.name}</span> who killed Dr. Black in the <span class="sol-text">${game.room.name}</span> with the <span class="sol-text">${game.weapon.name}</span>.`;
-    document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
+    alert(
+      "You need to select a suspect, a room and a weapon before submitting your accusation!"
+    );
   } else {
-    document.getElementById("guess-form").removeAttribute("class"); // set form to not display
-    document.getElementById("guess-form").setAttribute("class", "invisible");
-    document.getElementById(
-      "right-guess"
-    ).innerHTML = `Accusation #${rounds} <br> Right guesses: ${rightGuess}`;
-    document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
+    rounds++;
+    let guessPerson = document.getElementById("person").value;
+    let guessRoom = document.getElementById("room").value;
+    let guessWeapon = document.getElementById("weapon").value;
+    console.log(guessPerson, guessRoom, guessWeapon);
+    let rightGuess = 0;
+
+    if (guessPerson === game.person.value) {
+      rightGuess++;
+    }
+
+    if (guessRoom === game.room.value) {
+      rightGuess++;
+    }
+
+    if (guessWeapon === game.weapon.value) {
+      rightGuess++;
+    }
+
+    if (rightGuess === 3) {
+      document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+      document.getElementById("guess-form").setAttribute("class", "invisible");
+      document.getElementById(
+        "solution-par"
+      ).innerHTML = `Well done Detective, you solved the murder at your ${rounds} accusation!<br><br>
+    It was indeed <span class="sol-text">${game.person.name}</span> who killed Dr. Black in the <span class="sol-text">${game.room.name}</span> with the <span class="sol-text">${game.weapon.name}</span>.`;
+      document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
+    } else {
+      document.getElementById("guess-form").removeAttribute("class"); // set form to not display
+      document.getElementById("guess-form").setAttribute("class", "invisible");
+      document.getElementById(
+        "right-guess"
+      ).innerHTML = `Accusation #${rounds} <br> Right guesses: ${rightGuess}`;
+      document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
+    }
   }
-}
 }
 
 //to be called on try again - display the form again
@@ -229,7 +232,7 @@ function giveSolution() {
 
 //to be called on play again - remove the right paragraph and re-start the game
 function playAgain() {
-  // set right answer not to  display
+  // set right answer not to display
   document.getElementById("person").value = "";
   document.getElementById("room").value = "";
   document.getElementById("weapon").value = "";
@@ -238,5 +241,3 @@ function playAgain() {
 
   startGame();
 }
-
-//add round counter

@@ -50,12 +50,12 @@ header p {
 }
 
 .form-btn {
-    background-color: rgb(50, 53, 205);
+    background-color: rgb(90, 92, 228);
     margin-top:50px;
     width:30%;
 }
 .try-btn {
-   background-color: rgb(238, 34, 8);
+   background-color: rgb(231, 38, 38);
    margin-top: 10px;
    width: auto;
 }
@@ -112,6 +112,6 @@ option {
     margin:0 auto;
 }
 .sol-text {
-    color:rgb(56, 146, 71);
+    color:rgb(73, 150, 86);
     font-style: italic;
 }
