@@ -10,7 +10,7 @@ const mustard = {
 };
 
 const peacock = {
-  name: "Mrs peacock",
+  name: "Mrs Peacock",
   value: "peacock",
 };
 
@@ -31,7 +31,7 @@ const white = {
 
 const people = [green, mustard, peacock, plum, scarlett, white];
 
-const billard = {
+const billiard = {
   name: "Billiard Room",
   value: "billiard",
 };
@@ -77,7 +77,7 @@ const study = {
 };
 
 const rooms = [
-  billard,
+  billiard,
   ballroom,
   conservatory,
   dining,
@@ -161,6 +161,14 @@ function startGame() {
 //to be called on form submit - check that value submitted matched the game solution and display the right/wrong section
 
 function checkGuess() {
+  if (
+    (document.getElementById("person").value === "blank") ||
+    (document.getElementById("room").value === "blank") ||
+    (document.getElementById("weapon").value === "blank")
+  ) {
+    alert ("You need to select a suspect, a room and a weapon before submitting your accusation!");
+  }  else  {
+
   rounds++;
   let guessPerson = document.getElementById("person").value;
   let guessRoom = document.getElementById("room").value;
@@ -181,12 +189,10 @@ function checkGuess() {
   }
 
   if (rightGuess === 3) {
-    console.log(rounds);
     document.getElementById("guess-form").removeAttribute("class"); // set form to not display
     document.getElementById("guess-form").setAttribute("class", "invisible");
-    document.getElementById(
-      "solution-par"
-    ).textContent = `Well done Detective, you solved the murder at your ${rounds} accusation!`;
+    document.getElementById("solution-par").innerHTML = `Well done Detective, you solved the murder at your ${rounds} accusation!<br><br>
+    It was indeed <span class="sol-text">${game.person.name}</span> who killed Dr. Black in the <span class="sol-text">${game.room.name}</span> with the <span class="sol-text">${game.weapon.name}</span>.`;
     document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
   } else {
     document.getElementById("guess-form").removeAttribute("class"); // set form to not display
@@ -197,14 +203,11 @@ function checkGuess() {
     document.getElementById("wrong-answer").classList.remove("invisible"); // set wrong answer to display
   }
 }
+}
 
 //to be called on try again - display the form again
 function tryAgain() {
   // set form to display
-  document.getElementById("person").value = "";
-  document.getElementById("room").value = "";
-  document.getElementById("weapon").value = "";
-
   document.getElementById("guess-form").classList.remove("invisible");
 
   // set wrong answer not to  display
@@ -220,7 +223,7 @@ function giveSolution() {
   document.getElementById(
     "solution-par"
   ).innerHTML = `After wrong accusation #${rounds} you decided to call Hercule Poirot to help you. <br>
-     Poirot says: <br>"${game.person.name} killed Dr. Black in the ${game.room.name} with the ${game.weapon.name}."`;
+     Poirot says: <br><br>"<span class="sol-text">${game.person.name}</span> killed Dr. Black in the <span class="sol-text">${game.room.name}</span> with the <span class="sol-text">${game.weapon.name}</span>."`;
   document.getElementById("right-answer").classList.remove("invisible");
 }
 

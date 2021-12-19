@@ -111,3 +111,7 @@ option {
 #right-answer {
     margin:0 auto;
 }
+.sol-text {
+    color:rgb(56, 146, 71);
+    font-style: italic;
+}
