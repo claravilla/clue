@@ -28,6 +28,7 @@ document.getElementById("start-game").addEventListener("click", startGame);
 document.getElementById("submit-guess").addEventListener("click", checkGuess);
 document.getElementById("try-again").addEventListener("click", tryAgain);
 document.getElementById("play-again").addEventListener("click", playAgain);
+document.getElementById("play-again").addEventListener("click", giveSolution);
 
 //functions to run the game
 
@@ -117,14 +118,18 @@ function tryAgain() {
  
   document.getElementById("guess-form").classList.remove("invisible");
   
-
-
   // set wrong answer not to  display
   document.getElementById("wrong-answer").classList.add("invisible");
 
   //empty the right guess sentence
   document.getElementById("right-guess").innerHTML="";
 }
+
+
+function giveSolution(){
+    //
+}
+
 
 //to be called on play again - remove the right paragraph and re-start the game
 function playAgain() {
@@ -137,5 +142,7 @@ function playAgain() {
 
   startGame();
 }
+
+
 
 //add round counter
