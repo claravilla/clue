@@ -78,6 +78,7 @@ function checkGuess() {
 if (rightGuess===3) {
   document.getElementById("guess-form").removeAttribute("class"); // set form to not display
   document.getElementById("guess-form").setAttribute("class", "invisible");
+  document.getElementById("final-guess-count").textContent = `Well done Detective, you solved the murder at your ${rounds} accusation!`
   document.getElementById("right-answer").classList.remove("invisible"); //set right paragraph to show
 
 } else {
@@ -131,6 +132,7 @@ function playAgain() {
   document.getElementById("person").value ="" ;
   document.getElementById("room").value ="" ;
   document.getElementById("weapon").value ="" ;
+  document.getElementById("final-guess-count").textContent = "";
   document.getElementById("right-answer").classList.add("invisible");
 
   startGame();
